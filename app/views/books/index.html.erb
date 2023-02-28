@@ -1,8 +1,9 @@
-<h1>My Books Lists</h1>
 <% @books.each do |book| %>
-  <p> <%= link_to book.title, book_path(book) %> </p>
-  <p> <%= link_to book.author, book_path(book) %> </p>
+  <div class="book-card">
+    <p> <%= link_to book.title, book_path(book) %> </p>
+    <p> <%= link_to book.author, book_path(book) %> </p>
+  </div>
 <% end %>
 
-<%= link_to "create anew-book", new_book_path %>
-
+<%= link_to "create a new-book", new_book_path %>
+<%= link_to "details", new_book_path%>
