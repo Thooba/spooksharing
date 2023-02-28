@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>New book</h1>
+  <%= simple_form_for(@book) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+</div>
