@@ -1,1 +1,67 @@
 // Specific CSS for your home-page
+
+.home-banner {
+  background-color: black;
+  height: 500px;
+  padding: 40px;
+}
+
+.home-banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.home-banner-img {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+  background-color: white;
+}
+
+.home-body-text {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+  padding: 30px;
+  color: black;
+  border-radius: 20px;
+  background-color: transparent;
+  align-items: center;
+  font-weight: bold;
+  box-shadow: 0px 4px 22px 1px rgba(0, 0, 0, 0.5);
+}
+
+.home-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background-color: black;
+  border-radius: 15px;
+  box-shadow: 0px 4px 22px 1px rgba(255, 255, 255, 0.5);
+  margin: 20px;
+  font-size: 30px;
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.home-body-action {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
