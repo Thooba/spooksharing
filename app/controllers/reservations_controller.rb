@@ -11,7 +11,6 @@ class ReservationsController < ApplicationController
     else
       render :new
     end
-
   end
 
   def destroy
@@ -29,5 +28,4 @@ class ReservationsController < ApplicationController
   def set_book
     @book = Book.find(params[:book_id])
   end
-
 end
