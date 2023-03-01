@@ -11,15 +11,17 @@
   </head>
 
   <body>
+    <div class="main-content-wrapper">
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-    <%= yield %>
-  </body>
-
+      <%= yield %>
+    </div>
   <footer class="footer">
       <p>Terms and conditons</p>
       <p></p>
       <p></p>
       <p> <%= image_tag "book_icon.png" %> Spooksharing</p>
   </footer>
+  </body>
+
 </html>

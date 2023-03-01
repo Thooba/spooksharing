@@ -6,16 +6,16 @@
       <div class="col-6">
          <% if @book.photo.attached? %>
     <%# <%= image_tag %>
-    <%= cl_image_tag @book.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @book.photo.key ? @book.photo.key : "book_icon.png", height: 300, width: 400, crop: :fill, style: "background-color: white;" %>
     <% else %>
     <%= image_tag(["book1.jpg", "book2.jpg", "book3.jpg"].sample) %>
     <% end %>
      </div>
       <div class="col-6">
-        <p><%= @book.title %></p>
-        <p><%= @book.author %></p>
-        <p><%= @book.genre %></p>
-        <p><%= @book.release_date %></p>
+        <div class="info-box"><p><%= @book.title %></p></div>
+        <div class="info-box"><p><%= @book.author %></p></div>
+        <div class="info-box"><p><%= @book.genre %></p></div>
+        <div class="info-box"><p><%= @book.release_date %></p></div>
       </div>
 
 
