@@ -1,28 +1,33 @@
-<div class="home-banner">
-  <div class="home-banner-content">
-    <%= image_tag "book_icon.png", class: "home-banner-img" %>
-      <h1>BookSharing</h1>
-      <h3>Don't be greedy, share your books</h3>
+<div class="background">
+  <div class="home-banner">
+    <div class="home-banner-content">
+      <%= image_tag "book_icon.png", class: "home-banner-img" %>
+        <h1>SpookSharing</h1>
+        <h3>Don't be greedy, share your spooks</h3>
+      </div>
+  </div>
+
+  <div class="home-body-action">
+    <h1>
+      What would you like to do?
+    </h1>
+    <div class="home-btn">
+      <%= link_to "Reserve a book", books_path(@books) %>
     </div>
-</div>
-
-<div class="home-body-action">
-  <h1>
-    What would you like to do?
-  </h1>
-  <div class="home-btn">
-    <%= link_to "Reserve a book", books_path(@books) %>
+    <h1>or</h1>
+    <div class="home-btn">
+      <%= link_to "Share one of your books", new_book_path(@book) %>
+    </div>
   </div>
-  <h1>or</h1>
-  <div class="home-btn">
-    <%= link_to "Share one of your books", books_path(@books) %>
+
+  <div class="text-margin">
+    <div class="home-body-text">
+      <h4>
+        Spooksharing is a simple idea: if you're not reading your spooky book, let someone else read it! <br>
+        There is nothing sadder than that killer high-school vampire thriller sitting on a shelf collecting cobwebs, so be nice and share, and in return you can read books from other generous spooksharers. <br>
+        The journey begins here, just click on one of those buttons!
+      </h4>
+    </div>
   </div>
 </div>
-
-<div class="home-body-text">
-  <h4>
-    Booksharing is a simple idea: if you're not reading your book, let someone else read it! <br>
-    There is nothing sadder than a lonely book sitting on a shelf, so be nice and share, and in return you can read books from other generous booksharers. <br>
-    The journey begins here, just click on one of those buttons!
-  </h4>
-</div>
+<%#  %>

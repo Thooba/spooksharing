@@ -10,7 +10,20 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 30px 10px 30px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  img{
+    width: 20px;
+height: 20px;
+border-radius: 50%;
+background-color: white;
+object-fit: contain;
+  }
 body{
   background-color: black;
 }
