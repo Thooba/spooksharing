@@ -4,7 +4,12 @@
   <div class="card-show">
     <div class="row">
       <div class="col-6">
-        <%= cl_image_tag @book.photo.key, width:"324,46", height:"327,78" %>
+         <% if @book.photo.attached? %>
+    <%# <%= image_tag %>
+    <%= cl_image_tag @book.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+    <%= image_tag(["book1.jpg", "book2.jpg", "book3.jpg"].sample) %>
+    <% end %>
      </div>
       <div class="col-6">
         <p><%= @book.title %></p>
@@ -14,7 +19,7 @@
       </div>
 
 
-      <p><%= @book.synopis %></p>
+      <p>place holder</p>
 
     <div class="button-container mt-4">
       <%= link_to "Reserve this Book", new_book_reservation_path(@book.id), class:"custombutton" %>
