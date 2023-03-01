@@ -1,33 +1,62 @@
 <div class="background">
   <div class="home-banner">
     <div class="home-banner-content">
-      <%= image_tag "book_icon.png", class: "home-banner-img" %>
-        <h1>SpookSharing</h1>
-        <h3>Don't be greedy, share your spooks</h3>
-      </div>
-  </div>
-
-  <div class="home-body-action">
-    <h1>
-      What would you like to do?
-    </h1>
-    <div class="home-btn">
-      <%= link_to "Reserve a book", books_path(@books) %>
-    </div>
-    <h1>or</h1>
-    <div class="home-btn">
-      <%= link_to "Share one of your books", new_book_path(@book) %>
+      <h1>SpookSharing</h1>
+      <p>
+        Don't be greedy, share your spooks
+      </p>
     </div>
   </div>
 
-  <div class="text-margin">
-    <div class="home-body-text">
-      <h4>
-        Spooksharing is a simple idea: if you're not reading your spooky book, let someone else read it! <br>
-        There is nothing sadder than that killer high-school vampire thriller sitting on a shelf collecting cobwebs, so be nice and share, and in return you can read books from other generous spooksharers. <br>
-        The journey begins here, just click on one of those buttons!
-      </h4>
-    </div>
+  <div class="home-btn">
+    <%= link_to "Reserve", books_path(@books) %>
   </div>
 </div>
-<%#  %>
+
+
+
+<div class="home-body-action">
+  <h1>
+    What would you like to do?
+  </h1>
+  <h1>or</h1>
+  <div class="home-btn">
+    <%= link_to "Share one of your books", new_book_path(@book) %>
+  </div>
+</div>
+<%#
+<div class="text-margin">
+  <div class="home-body-text">
+    <h4>
+      Spooksharing is a simple idea: if you're not reading your spooky book, let someone else read it! <br>
+      There is nothing sadder than that killer high-school vampire thriller sitting on a shelf collecting cobwebs, so be nice and share, and in return you can read books from other generous spooksharers. <br>
+      The journey begins here, just click on one of those buttons!
+    </h4>
+  </div>
+</div> %>
+
+
+<div class="container">
+  <div class="book-list-container">
+    <% @books.each do |book| %>
+    <div class="book-card">
+      <% if book.photo.attached? %>
+      <% # <%= image_tag %>
+      <%= cl_image_tag book.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+      <%= image_tag(["blood_book.jpg"].sample) %>
+      <% end %>
+      <div class="book-content">
+        <div class="book-title">
+        <p> <%= book.title %> </p>
+        <p> <%= book.author %> </p>
+        </div>
+        <div class="details-button">
+        <%= link_to "Details", book_path(book) %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <%= link_to "Homepage", root_path %>
+</div>
