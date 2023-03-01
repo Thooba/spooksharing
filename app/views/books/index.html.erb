@@ -1,13 +1,28 @@
 
-
-
-
+<div class="container">
+<div class="book-list-container">
   <% @books.each do |book| %>
-    <div class="book-card">
-  <p> <%= link_to book.title, book_path(book) %> </p>
-  <p> <%= link_to book.author, book_path(book) %> </p>
-   </div>
-<% end %>
+  <div class="book-card">
+  <% if book.photo.attached? %>
+    <%# <%= image_tag %>
+    <%= cl_image_tag book.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+    <%= image_tag(["book1.jpg", "book2.jpg", "book3.jpg"].sample) %>
+    <% end %>
+    <div class="book-content">
+      <div class="book-title">
+      <p> <%= book.title %> </p>
+      <p> <%= book.author %> </p>
+    </div>
+    <div class="details-button">
+      <%= link_to "Details", book_path(book)%>
+    </div>
+  </div>
 
-<%= link_to "create a new-book", new_book_path %>
-<%= link_to "details", new_book_path%>
+  <%= link_to "Share your book", root_path %>
+</div>
+<% end %>
+</div>
+<%= link_to "Homepage", root_path %>
+</div>
+<%# this is just a type comment %>

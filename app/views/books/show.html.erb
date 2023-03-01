@@ -1,0 +1,31 @@
+
+<div class="container">
+
+  <div class="card-show">
+    <div class="row">
+      <div class="col-6">
+         <% if @book.photo.attached? %>
+    <%# <%= image_tag %>
+    <%= cl_image_tag @book.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+    <%= image_tag(["book1.jpg", "book2.jpg", "book3.jpg"].sample) %>
+    <% end %>
+     </div>
+      <div class="col-6">
+        <p><%= @book.title %></p>
+        <p><%= @book.author %></p>
+        <p><%= @book.genre %></p>
+        <p><%= @book.release_date %></p>
+      </div>
+
+
+      <p>place holder</p>
+
+    <div class="button-container mt-4">
+      <%= link_to "Reserve this Book", new_book_reservation_path(@book.id), class:"custombutton" %>
+      <%= link_to "Back to Books",  books_path, class:"custombutton" %>
+    </div>
+  </div>
+ </div>
+
+</div>
