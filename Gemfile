@@ -3,7 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+
 # Custom Gems
+gem "pg_search"
 gem 'faker'
 gem "dotenv-rails", groups: %i[development test]
 gem "cloudinary"
