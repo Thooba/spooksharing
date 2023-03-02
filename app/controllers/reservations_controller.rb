@@ -1,4 +1,9 @@
 class ReservationsController < ApplicationController
+
+  def show
+
+  end
+
   def new
     @reservation = Reservation.new
   end
