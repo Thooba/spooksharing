@@ -8,7 +8,9 @@
 
 Book.destroy_all
 
-10.times do
+address = ["Rudi-Dutschke-Straße 26, 10969 Berlin", "Suarezstrasse 20, 10115 Berlin"]
+
+for i in 0...address.length do
 
 User.create(
   firstname: Faker::Name.first_name
@@ -21,5 +23,6 @@ User.create(
     synopsis: Faker::Books::Lovecraft.sentence,
     release_date: Faker::Date.between(from: '1900-09-23', to: '2023-02-25'),
     user_id: User.all.sample.id,
+    address: address[i]
   )
 end
