@@ -32,6 +32,6 @@ User.create(
       "../app/assets/images/Little_Stranger.jpg",
       "../app/assets/images/The_Shining.jpg"
     ].sample,
-    user_id: User.all.sample.id,
+    user_id: User.all.sample.id
   )
 end
