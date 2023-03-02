@@ -1,5 +1,14 @@
 class BooksController < ApplicationController
   def index
+    @books = Book.all
+
+    @markers = @books.geocoded.map do |book|
+      {
+        lat: book.latitude,
+        lng: book.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {book: book}),
+        marker_html: render_to_string(partial: "marker")
+      }
     if params[:query].present?
       @books = Book.search_by_title_and_author_and_genre(params[:query])
     else

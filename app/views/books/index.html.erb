@@ -1,3 +1,11 @@
+
+<div class="map-container"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<div class="container">
 <div class="container">
   <%= form_with url: books_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
@@ -7,12 +15,14 @@
     %>
     <%= submit_tag "Search", class: "btn" %>
   <% end %>
-
+  
   <div class="book-list-container">
     <% @books.each do |book| %>
       <div class="book-card">
         <% if book.photo.attached? %>
+
           <%# <%= image_tag %>
+
           <%= cl_image_tag book.photo.key, height: 300, width: 400, crop: :fill %>
         <% else %>
           <%= image_tag(["blood_book.jpg"].sample) %>
@@ -22,6 +32,16 @@
             <p> <%= book.title %> </p>
             <p> <%= book.author %> </p>
           </div>
+          
+        <div class="details-button">
+          <%= link_to "Details", book_path(book)%>
+        </div>
+      </div>
+  </div>
+  <% end %>
+</div>
+
+<%= link_to "Homepage", root_path %>
           <div class="details-button">
             <%= link_to "Details", book_path(book)%>
           </div>
