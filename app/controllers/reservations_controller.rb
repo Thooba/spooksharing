@@ -6,13 +6,16 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    @book = Book.find(params[:book_id])
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @book = Book.find(params[:book_id])
     @reservation.book = @book
-    if @reservation.save
-      redirect_to book_path(@book)
+    @reservation.user = current_user
+    if @reservation.save!
+      redirect_to reservation_path(@reservation)
     else
       render :new
     end

@@ -1,0 +1,26 @@
+<h2 class="reservation-heading">Congratulations 🎉 You have reserved this Book !</h2>
+
+<div class="container">
+
+  <div class="card-show">
+    <div class="row">
+      <div class="col-6">
+         <% if @book.photo.attached? %>
+    <%= cl_image_tag @book.photo.key ? @book.photo.key : "book_icon.png", height: 300, width: 400, crop: :fill, style: "background-color: white;" %>
+    <% else %>
+    <%= image_tag(["book1.jpg", "book2.jpg", "book3.jpg"].sample) %>
+    <% end %>
+     </div>
+      <div class="col-6">
+        <div class="info-box"><p><%= @book.title %></p></div>
+        <div class="info-box"><p><%= @book.author %></p></div>
+        <div class="info-box"><p><%= @book.genre %></p></div>
+      </div>
+    <div class="button-container mt-4">
+      <%= link_to "Reserve this Book", new_book_reservation_path(@book.id), class: "custombutton" %>
+      <%= link_to "Back to Home", root, class: "custombutton" %>
+    </div>
+  </div>
+ </div>
+
+</div>
