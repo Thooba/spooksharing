@@ -1,13 +1,26 @@
 class ReservationsController < ApplicationController
+
+  def index
+    @reservations = Reservation.all
+  end
+
+  def show
+    @reservation = Reservation.find(params[:id])
+    @book = @reservation.book
+  end
+
   def new
     @reservation = Reservation.new
+    @book = Book.find(params[:book_id])
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @book = Book.find(params[:book_id])
     @reservation.book = @book
-    if @reservation.save
-      redirect_to book_path(@book)
+    @reservation.user = current_user
+    if @reservation.save!
+      redirect_to book_reservation_path(@book, @reservation)
     else
       render :new
     end

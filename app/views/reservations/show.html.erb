@@ -1,3 +1,4 @@
+<h2 class="reservation-heading">Congratulations 🎉 You have reserved this Book !</h2>
 
 <div class="container">
 
@@ -5,7 +6,6 @@
     <div class="row">
       <div class="col-6">
          <% if @book.photo.attached? %>
-    <% # <%= image_tag %>
     <%= cl_image_tag @book.photo.key ? @book.photo.key : "book_icon.png", height: 300, width: 400, crop: :fill, style: "background-color: white;" %>
     <% else %>
     <%= image_tag(["book1.jpg", "book2.jpg", "book3.jpg"].sample) %>
@@ -15,17 +15,10 @@
         <div class="info-box"><p><%= @book.title %></p></div>
         <div class="info-box"><p><%= @book.author %></p></div>
         <div class="info-box"><p><%= @book.genre %></p></div>
-        <div class="info-box"><p><%= @book.release_date %></p></div>
-        <div class="info-box synopsis"><p><%= @book.synopsis %></p></div>
       </div>
-        <%= simple_form_for [@book, @reservation] do |f| %>
-        <%= f.input :reservation_start %>
-       <%= f.input :reservation_end %>
-       <%= f.submit "confirm your reservation" %>
-       <% end %>
-
     <div class="button-container mt-4">
-      <%= link_to "Back to Books", books_path, class: "custombutton" %>
+      <%= link_to "Back to Home", root_path, class: "custombutton" %>
+      <%= link_to "See cart", reservations_path, class: "custombutton" %>
     </div>
   </div>
  </div>

@@ -18,6 +18,7 @@ User.create(
     title: Faker::Book.title,
     author: Faker::Book.author,
     genre: Faker::Book.genre,
+    synopsis: Faker::Books::Lovecraft.sentence,
     release_date: Faker::Date.between(from: '1900-09-23', to: '2023-02-25'),
     user_id: User.all.sample.id,
   )

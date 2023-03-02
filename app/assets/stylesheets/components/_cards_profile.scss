@@ -1,4 +1,7 @@
-
+.reservation-heading {
+  color: white;
+  text-align: center;
+}
 .card-show{
   box-shadow: 0px 4px 22px rgba(255, 255, 255, 0.5);
   padding: 40px;
@@ -15,6 +18,10 @@
   border-color:gray;
   border-style: solid;
   margin-bottom: 10px;
+}
+
+.synopsis{
+  height: 150px;
 }
 
 .button-container{
