@@ -22,6 +22,18 @@ User.create(
     genre: Faker::Book.genre,
     synopsis: Faker::Books::Lovecraft.sentence,
     release_date: Faker::Date.between(from: '1900-09-23', to: '2023-02-25'),
+    photo: [
+      "../app/assets/images/Beloved.jpg",
+      "../app/assets/images/Dracula.jpg",
+      "../app/assets/images/Frankenstein.jpg",
+      "../app/assets/images/Ghost_Story.jpg",
+      "../app/assets/images/Head.jpg",
+      "../app/assets/images/Hill_House.jpg",
+      "../app/assets/images/House_of_leaves.jpg",
+      "../app/assets/images/IT.jpg",
+      "../app/assets/images/Little_Stranger.jpg",
+      "../app/assets/images/The_Shining.jpg"
+    ].sample,
     user_id: User.all.sample.id,
     address: address[i]
   )
