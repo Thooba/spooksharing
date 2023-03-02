@@ -2,6 +2,7 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.all
+    @books = Book.all
   end
 
   def show

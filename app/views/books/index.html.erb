@@ -2,46 +2,30 @@
 <div class="map-container"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  data-map-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
 </div>
 
 <div class="container">
   <%= form_with url: books_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
-      params[:query],
-      class: "form-control search-bar",
-      placeholder: "Find a book"
-    %>
+                       params[:query],
+                       class: "form-control search-bar",
+                       placeholder: "Find a book" %>
     <%= submit_tag "Search", class: "btn" %>
   <% end %>
 
-  <div class="book-list-container">
+  <div class="book-list-container mt-5">
     <% @books.each do |book| %>
-      <div class="book-card">
-        <% if book.photo.attached? %>
-
-          <%# <%= image_tag %>
-
-          <%= cl_image_tag book.photo.key, height: 300, width: 400, crop: :fill %>
-        <% else %>
-          <%= image_tag(["blood_book.jpg"].sample) %>
-        <% end %>
+      <div class="book-card hvr-grow">
         <div class="book-content">
           <div class="book-title">
-            <p> <%= book.title %> </p>
+          <%= image_tag book.image_creator(book.genre), class: "mb-4" %>
+            <h4><%= book.title %> </h4>
             <p> <%= book.author %> </p>
-          </div>
-
-          <div class="details-button">
-            <%= link_to "Details", book_path(book)%>
+             <%= link_to "Details", book_path(book) %>
           </div>
         </div>
-         <div class="details-button">
-            <%= link_to "Details", book_path(book)%>
-         </div>
       </div>
     <% end %>
   </div>
 </div>
-
-<%= link_to "Homepage", root_path %>
