@@ -6,7 +6,6 @@
 </div>
 
 <div class="container">
-<div class="container">
   <%= form_with url: books_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
       params[:query],
@@ -15,7 +14,7 @@
     %>
     <%= submit_tag "Search", class: "btn" %>
   <% end %>
-  
+
   <div class="book-list-container">
     <% @books.each do |book| %>
       <div class="book-card">
@@ -32,23 +31,17 @@
             <p> <%= book.title %> </p>
             <p> <%= book.author %> </p>
           </div>
-          
-        <div class="details-button">
-          <%= link_to "Details", book_path(book)%>
-        </div>
-      </div>
-  </div>
-  <% end %>
-</div>
 
-<%= link_to "Homepage", root_path %>
           <div class="details-button">
             <%= link_to "Details", book_path(book)%>
           </div>
         </div>
+         <div class="details-button">
+            <%= link_to "Details", book_path(book)%>
+         </div>
       </div>
     <% end %>
   </div>
-  <%= link_to "Homepage", root_path %>
 </div>
-<%# this is just a type comment %>
+
+<%= link_to "Homepage", root_path %>
