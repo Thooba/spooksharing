@@ -24,8 +24,8 @@
         <div class="info-box synopsis"><p><%= @book.synopsis %></p></div>
       </div>
        <%= simple_form_for  [@book, @reservation], data: { controller: 'flatpickr' } do |f| %>
-  <%= f.input :reservation_start, as: :string, input_html: { data: { flatpickr_target: "reservation_start" } } %>
-  <%= f.input :reservation_end, as: :string, input_html: { data: { flatpickr_target: "reservation_end" } } %>
+  <%= f.input :reservation_start, as: :string, placeholder: 'start date', input_html: { data: { flatpickr_target: "reservation_start" } } %>
+  <%= f.input :reservation_end, as: :string, placeholder: 'end date', input_html: { data: { flatpickr_target: "reservation_end" } } %>
   <%= f.submit "confirm your reservation" %>
 <% end %>
 
