@@ -10,4 +10,22 @@ class Book < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
+
+
+
+    def image_creator(genre)
+      case genre
+      when "horror"
+        return "skull.png"
+      when "love"
+        return "love.png"
+      when "comedy"
+        return "comedy.png"
+      when "super natural"
+        return "supernatural.png"
+      else
+        return "alien"
+      end
+    end
+
 end

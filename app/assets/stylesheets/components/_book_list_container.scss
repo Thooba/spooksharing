@@ -1,43 +1,35 @@
-// .container {
-//   width: 100%;
-// }
-
 .book-list-container{
-  box-shadow: rgba(228, 218, 218, 0.35) 0px 5px 15px;
-  padding: 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem 0rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
   justify-content: center;
 }
 
 .book-card{
-  display: flex ;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  box-shadow: rgba(228, 218, 218, 0.35) 0px 5px 15px;
-  padding: 1rem;
-  width: 90%;
-  height: 500px;
-  cursor: pointer;
-  transition: all 400ms ease;
+  background-color: #161617;
+  border-radius: 8px;
+  padding: 10px;
 
   a, p{
     color: white;
-    text-decoration: none;
+  }
+
+  h4{
+    background-image: linear-gradient(120deg, #5d70e0, #dd40a9, #fc5739);
+    background-size: 200%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: animated-gradient 5s ease-in-out infinite;
   }
 
   img{
-    object-fit: cover;
-    width: 100%;
-    height: 300px;
+    height: 20px;
   }
 }
 
-.book-card:hover{
-  box-shadow: rgba(246, 140, 140, 0.35) 0px 5px 15px;
-  transform:scale(1.05)
+.book-image{
+  height: 100px;
 }
 
 .book-content {
@@ -49,10 +41,39 @@
 
 .details-button{
   box-shadow: rgba(228, 218, 218, 0.35) 0px 5px 15px;
-  width: 100px;
+  width: fit-content;
   text-align: center;
   height: 40px;
   border-radius: 5px;
   padding: 0.5rem ;
   cursor: pointer;
+}
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+
+@keyframes animated-gradient {
+
+  0%,
+  100% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }

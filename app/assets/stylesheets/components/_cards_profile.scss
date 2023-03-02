@@ -1,10 +1,12 @@
 .reservation-heading {
   color: white;
   text-align: center;
+  margin-bottom: 2rem;
 }
 .card-show{
-  box-shadow: 0px 4px 22px rgba(255, 255, 255, 0.5);
-  padding: 40px;
+  background-color: #161617;
+  border-radius: 8px;
+  padding: 10px;
   img {
     height: 100%;
     width: 100%;
@@ -45,4 +47,12 @@
     font-weight: bold;
     font-size: 25px;
   }
+}
+
+.spookies{
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
