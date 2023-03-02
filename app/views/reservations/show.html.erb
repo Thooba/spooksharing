@@ -17,8 +17,8 @@
         <div class="info-box"><p><%= @book.genre %></p></div>
       </div>
     <div class="button-container mt-4">
-      <%= link_to "Reserve this Book", new_book_reservation_path(@book.id), class: "custombutton" %>
-      <%= link_to "Back to Home", root, class: "custombutton" %>
+      <%= link_to "Back to Home", root_path, class: "custombutton" %>
+      <%= link_to "See cart", reservations_path, class: "custombutton" %>
     </div>
   </div>
  </div>

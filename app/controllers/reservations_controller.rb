@@ -1,7 +1,12 @@
 class ReservationsController < ApplicationController
 
-  def show
+  def index
+    @reservations = Reservation.all
+  end
 
+  def show
+    @reservation = Reservation.find(params[:id])
+    @book = @reservation.book
   end
 
   def new
@@ -15,7 +20,7 @@ class ReservationsController < ApplicationController
     @reservation.book = @book
     @reservation.user = current_user
     if @reservation.save!
-      redirect_to reservation_path(@reservation)
+      redirect_to book_reservation_path(@book, @reservation)
     else
       render :new
     end
