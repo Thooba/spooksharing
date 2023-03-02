@@ -3,6 +3,9 @@
   <%= simple_form_for(@book) do |f| %>
     <%= f.input :title %>
     <%= f.input :author %>
+    <%= f.input :genre %>
+    <%= f.input :release_date %>
+    <%= f.input :synopsis %>
     <%= f.input :photo, as: :file %>
     <%= f.submit "Submit review", class: "btn btn-primary" %>
   <% end %>

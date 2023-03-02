@@ -1,4 +1,5 @@
 <%= simple_form_for [@books, @reservations] do |f| %>
-  <%= f.input : %>
-  <%= f.submit %>
+  <%= f.input :reservation_start %>
+  <%= f.input :reservation_end %>
+  <%= f.submit "confirm your reservation" %>
 <% end %>
