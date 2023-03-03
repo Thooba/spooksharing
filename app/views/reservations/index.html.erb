@@ -1,7 +1,7 @@
-<h2 class="reservation-heading">Books you have reserved</h2>
-  <div class="book-list-container">
+<h2 class="reservation-heading heading-color">Spooks you have reserved</h2>
+  <div class="reservation-list-container">
     <% @reservations.each do |reservation| %>
-      <div class="book-card">
+      <div class="reservation-card">
         <% if reservation.book.photo.attached? %>
 
           <% # <%= image_tag %>
@@ -10,20 +10,17 @@
         <% else %>
           <%= image_tag(["blood_book.jpg"].sample) %>
         <% end %>
-        <div class="book-content">
+        <div class="book-content-res">
           <div class="book-title">
             <p> <%= reservation.book.title %> </p>
             <p> <%= reservation.book.author %> </p>
           </div>
 
-          <div class="details-button">
-            <%= link_to "Details", book_reservation_path(reservation.book, reservation) %>
-          </div>
-        </div>
 
-          <div class="book-content">
-          <div class="details-button">
-            <%= link_to "delete", reservation_path(reservation), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  %>
+
+          <div class="button-container-res">
+            <%= link_to "Delete", reservation_path(reservation), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "delete-res-button" %>
+            <%= link_to "Details", book_reservation_path(reservation.book, reservation), class: "delete-res-button" %>
           </div>
         </div>
       </div>

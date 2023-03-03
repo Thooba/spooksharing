@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="spookies">
-    <h2>Reserve your Spookieesss</h2>
+    <h2 class="heading-color">Reserve your Spookieesss</h2>
     <%= image_tag "comedy" %>
   </div>
 
@@ -35,10 +35,10 @@
       </div>
 
       <div class="calendar">
-        <%= simple_form_for  [@book, @reservation], data: { controller: 'flatpickr' } do |f| %>
-          <%= f.input :reservation_start, as: :string, placeholder: 'start date', input_html: { data: { flatpickr_target: "reservation_start" } } %>
-          <%= f.input :reservation_end, as: :string, placeholder: 'end date', input_html: { data: { flatpickr_target: "reservation_end" } } %>
-          <%= f.submit "confirm your reservation", id: 'sweet-alert-demo'%>
+        <%= simple_form_for [@book, @reservation], data: { controller: "flatpickr" } do |f| %>
+          <%= f.input :reservation_start, as: :string, placeholder: "start date", input_html: { data: { flatpickr_target: "reservation_start" } } %>
+          <%= f.input :reservation_end, as: :string, placeholder: "end date", input_html: { data: { flatpickr_target: "reservation_end" } } %>
+          <%= f.submit "confirm your reservation", id: "sweet-alert-demo" %>
         <% end %>
       </div>
     </div>
