@@ -1,4 +1,4 @@
-<h2 class="reservation-heading">Congratulations 🎉 You have reserved this Book !</h2>
+<h2 class="reservation-heading">Your Resevation is</h2>
 
 <div class="container">
 
@@ -16,6 +16,12 @@
         <div class="info-box"><p><%= @book.author %></p></div>
         <div class="info-box"><p><%= @book.genre %></p></div>
         <div class="info-box"><p><%= @book.synopsis %></p></div>
+
+        <div>
+          <div class="info-box"><p><%= @reservation.reservation_start %></p></div>
+          <div class="info-box"><p><%= @reservation.reservation_end %></p></div>
+        </div>
+      </div>
       </div>
     <div class="button-container mt-4">
       <%= link_to "Back to Home", root_path, class: "custombutton" %>

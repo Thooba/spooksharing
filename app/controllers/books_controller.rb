@@ -14,11 +14,21 @@ class BooksController < ApplicationController
         marker_html: render_to_string(partial: "marker")
       }
     end
+
   end
 
   def show
     @book = Book.find(params[:id])
     @reservation = Reservation.new
+    @bookmarkers = [@book.latitude, @book.longitude]
+
+    @markers =
+      {
+        lat: @book.latitude,
+        lng: @book.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {book:  @book}),
+        marker_html: render_to_string(partial: "minimarker")
+      }
   end
 
   def new
