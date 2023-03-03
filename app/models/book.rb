@@ -24,7 +24,7 @@ class Book < ApplicationRecord
       when "super natural"
         return "supernatural.png"
       else
-        return "alien"
+        return "alien.png"
       end
     end
 
