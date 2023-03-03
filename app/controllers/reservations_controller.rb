@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
     @reservation.book = @book
     @reservation.user = current_user
     if @reservation.save!
-      redirect_to book_reservation_path(@book, @reservation)
+      redirect_to book_reservation_path(@book, @reservation), notice: 'Congratulations 🎉 You have reserved this Book!'
     else
       render :new
     end
