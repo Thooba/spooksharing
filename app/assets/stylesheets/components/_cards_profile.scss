@@ -7,17 +7,17 @@
   background-color: #161617;
   border-radius: 8px;
   padding: 10px;
-  img {
-    height: 100%;
-    width: 100%;
-  }
+  // img {
+  //   height: 100%;
+  //   width: 100%;
+  // }
 }
 
 .info-box {
   padding: 10px 25px 10px 25px;
   color: white;
   border-radius: 5px;
-  border-color:gray;
+  border-color:$purple;
   border-style: solid;
   margin-bottom: 10px;
 }
@@ -29,17 +29,17 @@
 .button-container{
   color: white;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: end;
 }
 
 
 .custombutton{
   padding: 10px 25px 10px 25px;
-  box-shadow: 0px 4px 22px rgba(255, 255, 255, 0.5);
+  background-color: #0c0b0a;
+  border: solid 2px $purple;
   border-radius: 20px;
   text-decoration: none;
-  color: white;
+  color: $purple;
 
   a {
     text-decoration: none;
@@ -48,6 +48,11 @@
     font-size: 25px;
   }
 }
+.custombutton:hover {
+  color: #0c0b0a;
+  background-color: $purple;
+  transition-duration: 600ms;
+}
 
 .spookies{
   display: flex;
@@ -55,4 +60,22 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+}
+
+.show-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.show-title {
+  color: $purple;
+  font-weight: bold;
+}
+
+.calendar {
+  background-color: #0c0b0a;
+  color: $purple;
 }

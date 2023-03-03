@@ -12,3 +12,6 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import SinglemapController from "./singlemap_controller"
+application.register("singlemap", SinglemapController)
