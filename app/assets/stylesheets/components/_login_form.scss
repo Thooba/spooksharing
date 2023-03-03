@@ -1,17 +1,41 @@
-.simple_form{
-  // display: flex;
-  // justify-content: center;
-  // flex-direction: column;
-  // align-items: center;
-  // border-radius: 10px;
-  // background-color: #0c0b0a;
-  // margin: 0 auto;
-  // width: 500px;
-  // height: 300px;
-  // color: white;
-  // border: solid 2px $purple;
+.simple-form-custom {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #0c0b0a;
+  margin: 0 auto;
+  width: 500px;
+  height: 300px;
+  border: solid 2px $purple;
 }
 
 .form-actions input {
   color: white;
+}
+
+.simple-form-custom-dillon {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #0c0b0a;
+  margin: 0 auto;
+  width: 500px;
+  height: 300px;
+  border: solid 2px $purple;
+
+  #reservation_reservation_start {
+    color: white !important
+  }
+
+  #reservation_reservation_end {
+    color: white !important
+  }
+
+  label{
+    color: $purple !important
+  }
 }
