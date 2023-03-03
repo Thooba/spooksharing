@@ -1,33 +1,52 @@
-<h2 class="reservation-heading heading-color">Your Resevation is</h2>
-
 <div class="container">
+  <div class="spookies">
+    <h2 class="reservation-heading heading-color">Your Resevation is</h2>
+  </div>
 
   <div class="card-show">
     <div class="row">
       <div class="col-6">
-         <% if @book.photo.attached? %>
-    <%= cl_image_tag @book.photo.key ? @book.photo.key : "book_icon.png", height: 300, width: 400, crop: :fill, style: "background-color: white;" %>
-    <% else %>
-    <%= image_tag(["book1.jpg", "book2.jpg", "book3.jpg"].sample) %>
-    <% end %>
-     </div>
+        <% if @book.photo.attached? %>
+          <%= cl_image_tag @book.photo.key ? @book.photo.key : "book_icon.png", height: 300, width: 400, crop: :fill, style: "background-color: white; width: 100%; height:100%;" %>
+        <% else %>
+          <%= image_tag(["book1.jpg", "book2.jpg", "book3.jpg"].sample) %>
+        <% end %>
+      </div>
       <div class="col-6">
+        <p class="show-title">Title</p>
         <div class="info-box"><p><%= @book.title %></p></div>
+        <p class="show-title">Author</p>
         <div class="info-box"><p><%= @book.author %></p></div>
+        <p class="show-title">Genre</p>
         <div class="info-box"><p><%= @book.genre %></p></div>
-        <div class="info-box"><p><%= @book.synopsis %></p></div>
-
-        <div>
-          <div class="info-box"><p><%= @reservation.reservation_start %></p></div>
-          <div class="info-box"><p><%= @reservation.reservation_end %></p></div>
-        </div>
+        <p class="show-title">Release Date</p>
+        <div class="info-box"><p><%= @book.release_date %></p></div>
+        <p class="show-title">Synopsis</p>
+        <div class="info-box synopsis"><p><%= @book.synopsis %></p></div>
       </div>
-      </div>
-    <div class="button-container mt-4">
-      <%= link_to "Back to Home", root_path, class: "custombutton" %>
-      <%= link_to "All reservations", reservations_path, class: "custombutton" %>
     </div>
   </div>
- </div>
 
+  <div class="show-bottom">
+    <div class="map-container-2" style="width: 700px; height: 300px;"
+      data-controller="singlemap"
+      data-singlemap-markers-value="<%= @markers.to_json %>"
+      data-singlemap-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
+    </div>
+
+    <div class="reserved">
+      <h3>Reserved</h3>
+      <p>from:</p>
+      <p style="color: white;"><%= @reservation.reservation_start %></p>
+      <p>to</p>
+      <p style="color: white;"><%= @reservation.reservation_end %></p>
+    </div>
+  </div>
+
+
+  <div class="button-container mt-4" style="align-items: right;">
+    <%= link_to "Back to Books", books_path, class: "custombutton" %>
+    <p style="color: #0c0b0a;">oops</p>
+    <%= link_to "All reservations", reservations_path, class: "custombutton" %>
+  </div>
 </div>

@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="spookies">
     <h2 class="heading-color">Reserve your Spookieesss</h2>
@@ -27,23 +26,23 @@
         <div class="info-box synopsis"><p><%= @book.synopsis %></p></div>
       </div>
     </div>
-    <div class="show-bottom">
-      <div class="map-container" style="width: 500px; height: 300px;"
-        data-controller="singlemap"
-        data-singlemap-markers-value="<%= @markers.to_json %>"
-        data-singlemap-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
-      </div>
-
-      <div class="calendar">
-        <%= simple_form_for [@book, @reservation], data: { controller: "flatpickr" } do |f| %>
-          <%= f.input :reservation_start, as: :string, placeholder: "start date", input_html: { data: { flatpickr_target: "reservation_start" } } %>
-          <%= f.input :reservation_end, as: :string, placeholder: "end date", input_html: { data: { flatpickr_target: "reservation_end" } } %>
-          <%= f.submit "confirm your reservation", id: "sweet-alert-demo" %>
-        <% end %>
-      </div>
-    </div>
   </div>
 
+  <div class="show-bottom">
+    <div class="map-container-2" style="width: 700px; height: 300px;"
+      data-controller="singlemap"
+      data-singlemap-markers-value="<%= @markers.to_json %>"
+      data-singlemap-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
+    </div>
+
+    <div class="calendar">
+      <%= simple_form_for  [@book, @reservation], data: { controller: 'flatpickr' } do |f| %>
+        <%= f.input :reservation_start, as: :string, placeholder: 'start date', input_html: { data: { flatpickr_target: "reservation_start" } } %>
+        <%= f.input :reservation_end, as: :string, placeholder: 'end date', input_html: { data: { flatpickr_target: "reservation_end" } } %>
+        <%= f.submit "confirm your reservation", id: 'sweet-alert-demo'%>
+      <% end %>
+    </div>
+  </div>
 
   <div class="button-container mt-4" style="align-items: right;">
     <%= link_to "Back to Books", books_path, class: "custombutton" %>
