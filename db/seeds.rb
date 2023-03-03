@@ -36,7 +36,8 @@ user1 = User.create(
 
 addresses.each_with_index do |address, index|
   book = Book.new(
-    title: Faker::Book.title(word_count: 2 , random_words_to_add: 2), author: Faker::Book.author,
+    title: Faker::Book.title,
+    author: Faker::Book.author,
     genre: ["horror", "love", "comedy", "sci-fi"].sample,
     synopsis: Faker::Books::Lovecraft.sentence(word_count: 25, random_words_to_add: 10),
     release_date: Faker::Date.between(from: '1900-09-23', to: '2023-02-25'),
