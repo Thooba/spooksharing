@@ -1,9 +1,10 @@
 .map-container {
-  width: 85%;
+  width: 80%;
   height: 500px;
   align-items: center;
   margin: 50px;
   padding: 30px;
-  border-radius: 20px;
-  border: solid 2px white;
+  border-radius: 10px;
+  border: solid 2px $purple;
+  margin: 0 auto;
 }

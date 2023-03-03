@@ -1,7 +1,14 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $black;
-  img{
+
+  a {
+    text-decoration: none;
+    color: $purple;
+    font-size: 1.2rem;
+    margin-right: 2rem;
+  }
+  img {
     background-color: $purple;
   }
 }
