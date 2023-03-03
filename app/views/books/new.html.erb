@@ -1,18 +1,23 @@
-<div>
-  <h2 class="heading-color">Share your Spooks here</h2>
-  <div>
-  <%= simple_form_for(@book) do |f| %>
-    <div class="upload-book">
-      <%= f.input :title %>
-      <%= f.input :author %>
-      <%= f.input :genre %>
-      <%= f.input :release_date %>
-      <%= f.input :synopsis %>
-      <%= f.input :address %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit "Upload" %>
-    </div>
+<div class="container">
 
-  <% end %>
+  <div class="row">
+    <h2 class="heading-color mt-4" style='text-align: center;margin:0;'>Share your Spooks here</h2>
+    <div class="custom-wrapper">
+        <div class="col-6">
+        <%= simple_form_for(@book) do |f| %>
+
+            <%= f.input :title %>
+            <%= f.input :author %>
+            <%= f.input :genre %>
+            <%= f.input :release_date %>
+            <%= f.input :synopsis %>
+            <%= f.input :address %>
+            <%= f.input :photo, as: :file, class: "customfile" %>
+            <%= f.submit "Upload", class: "upload-button" %>
+
+
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

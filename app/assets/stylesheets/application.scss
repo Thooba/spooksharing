@@ -48,3 +48,59 @@
 body {
   background-color: $black;
 }
+
+
+// This is for the new book route scss
+
+.custom-wrapper{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+label{
+  color: #424245 !important;
+}
+
+// This is for the index reserveration route scss
+.button-container-res{
+  display: flex;
+}
+
+.book-content-res {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  flex-direction: column;
+}
+
+.delete-res-button,.upload-button {
+  margin-right: 15px;
+  padding: 10px 25px 10px 25px;
+  background-color: #0c0b0a;
+  border: solid 2px $purple;
+  border-radius: 5px;
+  text-decoration: none;
+  color: $purple;
+}
+
+.delete-res-button:hover, .upload-button:hover {
+  color: #0c0b0a;
+  background-color: $purple;
+  transition-duration: 600ms;
+}
+
+.form-control {
+  background-color: $black;
+}
+
+.release-date{
+  background-color: $black;
+  color: gray;
+}
+
+.form-select{
+  background-color: $black !important;
+}
