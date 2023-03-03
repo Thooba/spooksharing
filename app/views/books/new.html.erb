@@ -1,15 +1,18 @@
-<div class="container">
-  <h1>New book</h1>
-  <div class="submit-form">
+<div>
+  <h2 class="heading-color">Share your Spooks here</h2>
+  <div>
   <%= simple_form_for(@book) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :author %>
-    <%= f.input :genre %>
-    <%= f.input :release_date %>
-    <%= f.input :synopsis %>
-    <%= f.input :address %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <div class="upload-book">
+      <%= f.input :title %>
+      <%= f.input :author %>
+      <%= f.input :genre %>
+      <%= f.input :release_date %>
+      <%= f.input :synopsis %>
+      <%= f.input :address %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Upload" %>
+    </div>
+
   <% end %>
   </div>
 </div>
