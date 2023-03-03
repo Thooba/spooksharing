@@ -35,7 +35,7 @@
       data-singlemap-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
     </div>
 
-    <div class="calendar">
+    <div class="calendar simple-form-custom-dillon">
       <%= simple_form_for  [@book, @reservation], data: { controller: 'flatpickr' } do |f| %>
         <%= f.input :reservation_start, as: :string, placeholder: 'start date', input_html: { data: { flatpickr_target: "reservation_start" } } %>
         <%= f.input :reservation_end, as: :string, placeholder: 'end date', input_html: { data: { flatpickr_target: "reservation_end" } } %>
