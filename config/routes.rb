@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources "books", only: [:index, :show, :new, :create, :destroy] do
     resources "reservations", only: [:create, :show]
   end
-  resources :reservations, only: [:index, :destroy]
+  resources "reservations", only: [:index, :destroy]
 end

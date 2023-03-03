@@ -5,17 +5,16 @@
     <%= image_tag "comedy" %>
   </div>
 
-
   <div class="card-show">
     <div class="row">
       <div class="col-6">
-         <% if @book.photo.attached? %>
-    <% # <%= image_tag %>
-    <%= cl_image_tag @book.photo.key ? @book.photo.key : "book_icon.png", height: 300, width: 400, crop: :fill, style: "background-color: white;" %>
-    <% else %>
-    <%= image_tag(["book1.jpg", "book2.jpg", "book3.jpg"].sample) %>
-    <% end %>
-     </div>
+        <% if @book.photo.attached? %>
+          <% # <%= image_tag %>
+          <%= cl_image_tag @book.photo.key ? @book.photo.key : "book_icon.png", height: 300, width: 400, crop: :fill, style: "background-color: white;" %>
+        <% else %>
+          <%= image_tag(["book1.jpg", "book2.jpg", "book3.jpg"].sample) %>
+        <% end %>
+      </div>
       <div class="col-6">
         <div class="info-box"><p><%= @book.title %></p></div>
         <div class="info-box"><p><%= @book.author %></p></div>
@@ -23,16 +22,14 @@
         <div class="info-box"><p><%= @book.release_date %></p></div>
         <div class="info-box synopsis"><p><%= @book.synopsis %></p></div>
       </div>
-       <%= simple_form_for  [@book, @reservation], data: { controller: 'flatpickr' } do |f| %>
-  <%= f.input :reservation_start, as: :string, placeholder: 'start date', input_html: { data: { flatpickr_target: "reservation_start" } } %>
-  <%= f.input :reservation_end, as: :string, placeholder: 'end date', input_html: { data: { flatpickr_target: "reservation_end" } } %>
-  <%= f.submit "confirm your reservation" %>
-<% end %>
-
+      <%= simple_form_for  [@book, @reservation], data: { controller: 'flatpickr' } do |f| %>
+        <%= f.input :reservation_start, as: :string, placeholder: 'start date', input_html: { data: { flatpickr_target: "reservation_start" } } %>
+        <%= f.input :reservation_end, as: :string, placeholder: 'end date', input_html: { data: { flatpickr_target: "reservation_end" } } %>
+        <%= f.submit "confirm your reservation" %>
+      <% end %>
+    </div>
     <div class="button-container mt-4">
       <%= link_to "Back to Books", books_path, class: "custombutton" %>
     </div>
   </div>
- </div>
-
 </div>
