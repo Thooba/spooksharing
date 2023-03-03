@@ -1,12 +1,11 @@
-
-<div class="map-container"
+<div class="map-container mt-5"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
 </div>
 
 <div class="container">
-  <%= form_with url: books_path, method: :get, class: "d-flex" do %>
+  <%= form_with url: books_path, method: :get, class: "d-flex justify-content-center mt-5" do %>
     <%= text_field_tag :query,
                        params[:query],
                        class: "form-control search-bar",

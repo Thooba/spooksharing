@@ -1,33 +1,72 @@
 <div class="background">
   <div class="home-banner">
     <div class="home-banner-content">
-      <%= image_tag "book_icon.png", class: "home-banner-img" %>
-        <h1>SpookSharing</h1>
-        <h3>Don't be greedy, share your spooks</h3>
+      <h1>SpookSharing</h1>
+      <p>
+        Don't be greedy, share your spooks
+      </p>
+    </div>
+  </div>
+
+  <div class ="home-cta heading-color">
+    <%= link_to "Reserve", books_path(@books) %>
+    <%= link_to "Share one of your books", new_book_path(@book) %>
+  </div>
+
+  <div class="top-books">
+   <h3 class="reservation-heading">These are our top spooks</h3>
+   <div class="book-list-container mt-5">
+    <% @books.first(4).each do |book| %>
+      <div class="home-book-card">
+        <div class="book-content">
+          <div class="book-title">
+          <%= image_tag book.image_creator(book.genre), class: "mb-4" %>
+            <h4><%= book.title %> </h4>
+            <p> <%= book.author %> </p>
+             <%= link_to "Details", book_path(book) %>
+          </div>
+        </div>
       </div>
+    <% end %>
   </div>
+   </div>
+</div>
 
-  <div class="home-body-action">
-    <h1>
-      What would you like to do?
-    </h1>
-    <div class="home-btn">
-      <%= link_to "Reserve a book", books_path(@books), id: 'sweet-alert-demo'%>
-    </div>
-    <h1>or</h1>
-    <div class="home-btn">
-      <%= link_to "Share one of your books", new_book_path(@book) %>
-    </div>
+
+<div class="how-it-works">
+  <div class="how-it-content">
+  <%= image_tag "find.png" %>
+  <h4>Find your pick</h4>
+    <p>
+      We often do book sharing, because it’s not necessary to buy a new book just to read it once.
+      After you read a book, it’ll take a lot of space and you don’t know where to put the book.
+    </p>
   </div>
-
-  <div class="text-margin">
-    <div class="home-body-text">
-      <h4>
-        Spooksharing is a simple idea: if you're not reading your spooky book, let someone else read it! <br>
-        There is nothing sadder than that killer high-school vampire thriller sitting on a shelf collecting cobwebs, so be nice and share, and in return you can read books from other generous spooksharers. <br>
-        The journey begins here, just click on one of those buttons!
-      </h4>
-    </div>
+  <div class="how-it-content">
+  <%= image_tag "reserve.png" %>
+  <h4>Reserve</h4>
+    <p>
+      Sharing is the easiest way to get rid of it.
+      In our opinion it’s a great way to help our environment,
+      and we would definitely recommend it to everyone!
+    </p>
+  </div>
+  <div class="how-it-content">
+  <%= image_tag "order.png" %>
+  <h4>Order</h4>
+    <p>
+      As another word for book sharing we also use book change,
+      book swapping or book crossing. The word book sharing was used
+      in 2000 for the first time (USA). But we guess people already used it before 2000.
+      </p>
+  </div>
+  <div class="how-it-content">
+  <%= image_tag "creepy-ghost.png" %>
+  <h4>Deliver</h4>
+    <p>
+      Book sharing contains a lot of advantages:
+      Book sharing is very cheap. That’s why people get animated to read.
+      Through book sharing you get to know different authors and stories.
+    </p>
   </div>
 </div>
-<%#  %>

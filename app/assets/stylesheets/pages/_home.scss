@@ -1,77 +1,147 @@
 // Specific CSS for your home-page
 
-.home-banner {
-  background-color: rgba(0, 0, 0, 0.584);
-  border: solid 4px rgba(0, 0, 0, 0.874);
-  height: 500px;
-  padding: 40px;
+.background {
+  background-color: $black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 2rem;
 }
 
 .home-banner-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  color: white;
+  align-items: center;
+  gap: 1rem;
+  color: $purple;
   font-weight: bold;
-}
 
-.home-banner-img {
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-  box-shadow: 0px 4px 30px 1px rgba(255, 255, 255, 0.548);
-  // filter: grayscale(1);
-  // -webkit-filter: grayscale(1);
-  // background-color: white;
-}
-
-.home-body-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  h4 {
-    width: 60%;
-    padding: 30px;
-    color: rgb(255, 255, 255);
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0px 4px 22px 6px rgb(0, 0, 0);
+  h1 {
+    font-size: 5rem;
+    text-shadow: 2px 2px $black;
   }
-}
 
-.home-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px;
-  background-color: black;
-  border-radius: 15px;
-  box-shadow: 0px 4px 22px 1px rgba(255, 255, 255, 0.5);
-  margin: 20px;
-  font-size: 30px;
-  cursor: pointer;
-
-  a {
-    text-decoration: none;
+  p {
+    font-size: 2rem;
+    margin-top: auto;
+    font-weight: 200;
+    color: white;
+    text-shadow: 1px 1px $purple;
+  }
+  p:before {
+    content: "----";
     color: white;
     font-weight: bold;
   }
 }
 
-.home-body-action {
-  color: white;
-  font-weight: bold;
-  text-align: center;
+.home-cta {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  gap: 2rem;
+  font-size: 1.5rem;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:after {
+    content: ">";
+    margin-left: 0.5rem;
+  }
 }
 
-.background {
-  background-image: url('horror_back.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+.home-btn {
+  box-shadow: rgba(228, 218, 218, 0.35) 0px 5px 15px;
+  width: 150px;
+  text-align: center;
+  height: 70px;
+  border-radius: 5px;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+  background-color: $black;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: all 400ms ease;
+
+  a {
+    color: $purple;
+    text-decoration: none;
+  }
+}
+
+.home-btn:hover {
+  background-color: white;
+}
+
+.carousel-inner {
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+}
+
+.top-books {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.home-book-card{
+  background-color: #161617;
+  border-radius: 8px;
+  padding: 10px;
+
+  a, p{
+    color: white;
+  }
+
+  h4{
+    color: $purple;
+  }
+
+  img{
+    height: 20px;
+  }
+}
+
+.how-it-works {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  width: 80%;
+  gap: 3rem;
+  color: white;
+  font-weight: 200;
+  font-size: 1rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+  background-color: #161617;
+}
+
+.how-it-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2rem;
+  width: 70%;
+  padding: 3rem;
+
+  h4 {
+    font-weight: 400;
+    font-size: 2rem;
+  }
+
+  img {
+    height: 60px;
+    width: 60px;
+  }
+
+  p {
+    font-weight: bold;
+  }
 }
