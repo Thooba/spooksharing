@@ -19,7 +19,7 @@
     <% @books.first(4).each do |book| %>
       <div class="home-book-card">
         <div class="book-content">
-          <div class="book-title">
+          <div class="book-title pb-4">
           <%= image_tag book.image_creator(book.genre), class: "mb-4" %>
             <h4><%= book.title %> </h4>
             <p> <%= book.author %> </p>

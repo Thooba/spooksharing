@@ -92,9 +92,19 @@
 }
 
 .home-book-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #161617;
   border-radius: 8px;
   padding: 10px;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
 
   a, p{
     color: white;
@@ -107,6 +117,12 @@
   img{
     height: 20px;
   }
+}
+
+
+.home-book-card:hover, .home-book-card:focus, .home-book-card:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .how-it-works {
