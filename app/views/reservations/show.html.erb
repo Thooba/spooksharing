@@ -15,10 +15,11 @@
         <div class="info-box"><p><%= @book.title %></p></div>
         <div class="info-box"><p><%= @book.author %></p></div>
         <div class="info-box"><p><%= @book.genre %></p></div>
+        <div class="info-box"><p><%= @book.synopsis %></p></div>
       </div>
     <div class="button-container mt-4">
       <%= link_to "Back to Home", root_path, class: "custombutton" %>
-      <%= link_to "See cart", reservations_path, class: "custombutton" %>
+      <%= link_to "All reservations", reservations_path, class: "custombutton" %>
     </div>
   </div>
  </div>

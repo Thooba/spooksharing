@@ -39,7 +39,7 @@ addresses.each_with_index do |address, index|
     title: Faker::Book.title,
     author: Faker::Book.author,
     genre: ["horror", "love", "comedy", "sci-fi"].sample,
-    synopsis: Faker::Books::Lovecraft.sentence,
+    synopsis: Faker::Books::Lovecraft.sentence(word_count: 25, random_words_to_add: 10),
     release_date: Faker::Date.between(from: '1900-09-23', to: '2023-02-25'),
     address: address
   )
