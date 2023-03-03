@@ -18,6 +18,7 @@
    <div class="book-list-container mt-5">
     <% @books.first(4).each do |book| %>
       <div class="home-book-card">
+
         <div class="book-content">
           <div class="book-title">
           <%= image_tag book.image_creator(book.genre), class: "mb-4" %>
@@ -26,11 +27,13 @@
              <%= link_to "Details", book_path(book) %>
           </div>
         </div>
+
       </div>
     <% end %>
   </div>
    </div>
 </div>
+
 
 
 <div class="how-it-works">
