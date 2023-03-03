@@ -21,7 +21,7 @@
   display: flex;
   justify-content: space-evenly;
   padding: 10px 30px 10px 30px;
-  background-color: black;
+  background-color: $black;
   color: white;
   box-shadow: 0px 4px 16px 1px rgba(255, 255, 255, 0.548);
   font-weight: bold;
@@ -36,5 +36,5 @@
 }
 
 body {
-  background-color: black;
+  background-color: $black;
 }
